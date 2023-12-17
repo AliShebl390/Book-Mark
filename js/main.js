@@ -34,10 +34,10 @@ function display() {
         <td>` +
             (i + 1) +
             `</td>
-        <td>` +
+        <td class="text-capitalize fw-bold">` +
             sites[i].siteName +
             `</td>
-        <td> <a href="` +
+        <td> <a target="_blank" href="` +
             sites[i].siteLink +
             `" class="btn px-4">Visit</a> </td>
         <td> <button onclick="deleteSite(` +
