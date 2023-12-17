@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="shortcut icon" href="images/bookmark.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookmark</title>
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <div class="container pt-5">
-        <form action="" class="d-flex flex-column">
-            <label for="siteName">Site Name</label>
-            <input type="text" class="form-control mb-4 mt-1" id="siteName">
-            <label for="siteLink">Site URL</label>
-            <input type="email" class="form-control mt-1" id="siteLink"> 
-            <button type="button" class="btn btn-outline-primary my-4 align-self-center" onclick="addSite()">Submit</button>
-            
-        </form>
+    <div class="container pt-5 d-flex flex-column">
+        <H1 class="align-self-center mb-5">Bookmarker </H1>
+        <div class="bookmark-body py-4 w-100 d-flex flex-column">
+            <h2 class="align-self-center mb-5">
+                <i class="fa-solid fa-bookmark"></i>
+                Bookmark your favorite sites
+                <i class="fa-solid fa-bookmark"></i>
+            </h2>
+            <form action="" class="d-flex flex-column">
+                <label class="pb-2 fw-semibold" for="siteName"><i class="fa-solid fa-book-bookmark pe-2"></i> Site Name</label>
+                <input type="text" class="form-control mb-4 mt-1" id="siteName">
+                <label class="pb-2 fw-semibold" for="siteLink"><i class="fa-solid fa-link pe-2"></i> Site URL</label>
+                <input type="text" class="form-control mt-1" id="siteLink">
+                <button type="button" class="btn btn-submit my-4 align-self-center px-5"
+                    onclick="addSite()">Submit</button>
+
+            </form>
+        </div>
     </div>
     <table class="table table-light text-center table-hover table-borderless" style="line-height: 2.2;">
         <thead>
@@ -31,7 +43,8 @@
         </tbody>
     </table>
 
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/main.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>

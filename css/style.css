@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&family=Saira+Condensed:wght@300;400;500;600;700;800&display=swap");
+
+body {
+    font-family: "PT Sans Caption", sans-serif;
+    background-color: #F7ECDE;
+}
+
+::selection {
+    background-color: #fec260;
+    color: #352e28;
+}
+
+h1 {
+    font-family: "Pacifico", cursive;
+    font-size: 50px;
+    font-family: "Pacifico", cursive;
+    color: #352e28;
+    isolation: isolate;
+    position: relative;
+    cursor: default;
+
+}
+
+h1::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+    height: 25%;
+    background-color: #fec260;
+    transition: height 350ms;
+}
+
+h1:hover::before {
+    height: 50%;
+}
+
+
+.bookmark-body {
+    border-width: 2px 0 0px 0;
+    border-style: dotted;
+    border-color: #352e28;
+}
+
+.bookmark-body h2 {
+    font-family: "Righteous", cursive;
+    font-size: 25px;
+    background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media only screen and (max-width: 600px) {
+    .bookmark-body h2 {
+        font-size: 20px;
+    }
+}
+
+table {
+    border-width: 2px 0 0px 0;
+    border-style: dotted;
+    border-color: #352e28;
+}
+
+.btn-submit,
+.btn-submit:focus-visible
+{
+    color: rgb(209, 81, 45);
+    border: 1px solid rgb(209, 81, 45);
+}
+
+.btn-submit:hover {
+    color: white;
+    background-color: rgb(209, 81, 45);
+}
+
+td .btn {
+    border: none;
+    background-image: linear-gradient(to right, #3ca55c, #b5ac49);
+    color: white;
+}
+
+td .btn:hover,
+td .btn:active {
+    color: white !important;
+}
+
+
+.bookmark-body input:active,
+.bookmark-body input:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #d99c39;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #fec26055;
+}
