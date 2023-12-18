@@ -6,6 +6,7 @@ if (localStorage.getItem("Dataa") != null) {
 
     display();
 }
+
 function addSite() {
     var site = {
         siteName: siteName.value,
