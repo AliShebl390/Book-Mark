@@ -94,3 +94,36 @@ td .btn:active {
     outline: 0;
     box-shadow: 0 0 0 0.25rem #fec26055;
 }
+
+.modal-content {
+    background-color: #eee;
+    border: none;
+}
+
+.modal-header {
+    border-bottom: none;
+    padding: 15px 15px 10px 15px;
+}
+
+.modal-body {
+    /* text-wrap: nowrap; */
+    display: flex;
+    flex-direction: column;
+}
+.modal-body i {
+    color: #bb4120;
+    font-size: 20px;
+}
+.modal-body button {
+    margin-top: 15px;
+    background-color: #bb4120;
+    /* align-self: flex-end; */
+    border: none;
+}
+
+.modal-body:hover button,
+.modal-body .btn:hover,
+.modal-body .btn:focus-visible, 
+.modal-body .btn:active {
+    background-color: #d04924;
+}

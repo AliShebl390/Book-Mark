@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookmark</title>
     <link rel="stylesheet" href="css/all.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Include Bootstrap CSS from CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -21,13 +22,50 @@
                 <i class="fa-solid fa-bookmark"></i>
             </h2>
             <form action="" class="d-flex flex-column">
-                <label class="pb-2 fw-semibold" for="siteName"><i class="fa-solid fa-book-bookmark pe-2"></i> Site Name</label>
-                <input type="text" class="form-control mb-4 mt-1" id="siteName">
-                <label class="pb-2 fw-semibold" for="siteLink"><i class="fa-solid fa-link pe-2"></i> Site URL</label>
-                <input type="text" class="form-control mt-1" id="siteLink">
-                <a type="button" class="btn btn-submit my-4 align-self-center px-5"
-                    onclick="addSite()">Submit</a>
+                <label class="pb-2 fw-semibold" for="siteName"><i class="fa-solid fa-book-bookmark pe-2"></i> Site
+                    Name</label>
+                <input type="text" class="form-control mt-1" id="siteName">
 
+                <label class="pb-2 mt-3 fw-semibold" for="siteLink"><i class="fa-solid fa-link pe-2"></i> Site
+                    URL</label>
+                <input type="text" class="form-control mt-1" id="siteLink">
+                <div id="alertURL" class="d-none alert alert-danger">
+                    Enter a valid URL Starts With www. and ends with . and at least 2 chars
+                </div>
+                <!-- model -->
+                <div class="modal fade" id="alertModel" tabindex="-1" aria-labelledby="alertModelLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="alertModelLabel">Error</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    Site Name or Url is not valid, Please follow the rules below:
+                                </p>
+                                <ol class="rules list-unstyled m-0">
+                                    <li>
+                                        <i class="fa-regular fa-circle-right p-2"></i>Site name must
+                                        contain at least 3 characters
+                                    </li>
+                                    <li>
+                                        <i class="fa-regular fa-circle-right p-2"></i>Site URL must be a
+                                        valid one
+                                    </li>
+                                    <li>
+                                        <i class="fa-regular fa-circle-right p-2"></i>"https" will be autmatically added to you site link
+                                    </li>
+                                </ol>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end ofmodel -->
+                <a type="button" class="btn btn-submit my-4 align-self-center px-5" onclick="addSite()">Submit</a>
             </form>
         </div>
     </div>
@@ -43,7 +81,9 @@
         </tbody>
     </table>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Include Bootstrap JavaScript from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Your main.js script -->
     <script src="js/main.js"></script>
 </body>
 

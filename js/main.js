@@ -1,5 +1,6 @@
 var siteName = document.getElementById("siteName");
 var siteLink = document.getElementById("siteLink");
+const myModal = new bootstrap.Modal ('#alertModel');
 var sites = [];
 if (localStorage.getItem("Dataa") != null) {
     sites = JSON.parse(localStorage.getItem("Dataa"));
@@ -8,14 +9,18 @@ if (localStorage.getItem("Dataa") != null) {
 }
 
 function addSite() {
-    var site = {
-        siteName: siteName.value,
-        siteLink: formatLink(siteLink.value),
-    };
-    sites.push(site);
-    display();
-    clearInputs();
-    localStorage.setItem("Dataa", JSON.stringify(sites));
+    if (validURL() == true && validName() == true) {
+        var site = {
+            siteName: siteName.value,
+            siteLink: formatLink(siteLink.value),
+        };
+        sites.push(site);
+        display();
+        clearInputs();
+        localStorage.setItem("Dataa", JSON.stringify(sites));
+    } else {
+        myModal.show();
+    }
 }
 
 function formatLink(link) {
@@ -56,6 +61,34 @@ function deleteSite(index) {
 }
 
 function clearInputs() {
-    siteName.value = "" 
-    siteLink.value = "" 
+    siteName.value = "";
+    siteLink.value = "";
+}
+
+siteLink.addEventListener("input", validURL);
+function validURL() {
+    let regexURL = /www\.[A-Za-z]+\.[A-Za-z]{2,}/gi;
+    if (regexURL.test(siteLink.value) == true) {
+        siteLink.classList.add("is-valid");
+        siteLink.classList.remove("is-invalid");
+        return true;
+    } else {
+        siteLink.classList.remove("is-valid");
+        siteLink.classList.add("is-invalid");
+        return false;
+    }
+}
+
+siteName.addEventListener("input", validName);
+function validName() {
+    let regexName = /[A-Za-z]{3,}/gi;
+    if (regexName.test(siteName.value) == true) {
+        siteName.classList.add("is-valid");
+        siteName.classList.remove("is-invalid");
+        return true;
+    } else {
+        siteName.classList.remove("is-valid");
+        siteName.classList.add("is-invalid");
+        return false;
+    }
 }
